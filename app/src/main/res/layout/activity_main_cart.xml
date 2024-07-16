@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainCart">
+    <LinearLayout
+        android:id="@+id/header_title"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="50sp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_home_24" />
+
+        <TextView
+            android:id="@+id/YourOrder"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Your Order"
+            android:textSize="26sp"
+            android:textAlignment="center"
+            android:fontFamily="@font/bodoni"/>
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="50sp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_close_24" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/tableGrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/header_title"
+        android:layout_marginHorizontal="8sp">
+
+        <TextView
+            android:id="@+id/txttable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Table 1 "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/karla"/>
+        <ImageButton
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_delete_24" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/orderView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tableGrp"
+        android:layout_above="@id/SubtotalGrp"
+        android:layout_marginTop="8sp"
+        android:layout_marginBottom="8sp"
+        android:scrollbars="vertical">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/SubtotalGrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TotalGroup"
+        android:layout_marginHorizontal="8sp"
+        android:layout_marginVertical="3sp">
+        <TextView
+            android:id="@+id/Subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subtotal (RM) "
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/karla"/>
+        <TextView
+            android:id="@+id/txtsubtotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="RM 00.00 "
+            android:gravity="end"
+            android:textSize="15sp"
+            android:fontFamily="@font/karla"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/TotalGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Bottom"
+        android:layout_marginHorizontal="8sp">
+        <TextView
+            android:id="@+id/Total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total (RM) "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/karla"/>
+        <TextView
+            android:id="@+id/txttotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="RM 00.00 "
+            android:gravity="end"
+            android:textSize="18sp"
+            android:fontFamily="@font/karla"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/Bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8sp"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="X items "
+                android:textSize="12sp"
+                android:fontFamily="@font/karla"/>
+            <TextView
+                android:id="@+id/txtLastTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="RM 00.00"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:fontFamily="@font/karla"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Order Now"
+            android:fontFamily="@font/karla">
+        </Button>
+    </LinearLayout>
+</RelativeLayout>

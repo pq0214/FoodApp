@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="12dp"
+        app:cardCornerRadius="12dp"
+        android:layout_margin="20dp"
+        android:layout_centerVertical="true"
+        tools:context=".OrderFood">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginHorizontal="40sp"
+        android:layout_marginVertical="30sp">
+
+    <ImageView
+        android:id="@+id/foodimg"
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15sp"
+        android:contentDescription="Image"/>
+    <LinearLayout
+        android:id="@+id/Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/foodimg"
+        android:layout_alignStart="@+id/foodimg"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8sp">
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Food Name"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:fontFamily="@font/karla"/>
+        <TextView
+            android:id="@+id/txtPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Food Price"
+            android:textSize="18sp"
+            android:fontFamily="@font/karla"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/txtDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Name"
+        android:layout_alignStart="@+id/foodimg"
+        android:text="Food Description"
+        android:textSize="18sp"
+        android:layout_marginBottom="15sp"
+        android:fontFamily="@font/karla"/>
+
+    <TextView
+        android:id="@+id/OrderMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtDesc"
+        android:layout_alignStart="@+id/foodimg"
+        android:text="Order Mode"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:fontFamily="@font/karla"/>
+
+    <RadioGroup
+        android:id="@+id/ordermode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignStart="@+id/foodimg"
+        android:layout_below="@+id/OrderMode"
+        android:layout_marginBottom="8sp">
+
+    <RadioButton
+        android:id="@+id/radiobtnTakeAway"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take Away"
+        android:textSize="15sp"/>
+
+    <RadioButton
+        android:id="@+id/radiobtnDineIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dine In"
+        android:textSize="15sp"
+        android:checked="true"
+        android:fontFamily="@font/karla"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/Remark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ordermode"
+        android:layout_alignStart="@+id/foodimg"
+        android:layout_marginBottom="8sp"
+        android:text="Remark"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:fontFamily="@font/karla"/>
+
+    <EditText
+        android:id="@+id/edtRemark"
+        android:layout_width="320sp"
+        android:layout_height="120sp"
+        android:layout_below="@id/Remark"
+        android:layout_alignStart="@+id/foodimg"
+        android:layout_marginBottom="8sp"
+        android:hint="Add your remark here"
+        android:inputType="textMultiLine"
+        android:maxLines="5"
+        android:minLines="1"
+        android:padding="8dp"
+        android:background="@drawable/round_edt_textbox"
+        android:gravity="top|start"
+        android:textSize="15sp"
+        android:fontFamily="@font/karla"/>
+    <LinearLayout
+        android:id="@+id/qtyGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtRemark"
+        android:orientation="horizontal"
+        android:layout_alignStart="@+id/foodimg"
+        android:layout_marginBottom="15sp"
+        android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/Quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantity"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                android:layout_marginRight="8sp"
+                android:fontFamily="@font/karla"/>
+            <NumberPicker
+                android:id="@+id/counterPicker"
+                android:layout_width="wrap_content"
+                android:layout_height="80sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/btnGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/qtyGroup"
+        android:orientation="horizontal"
+        android:layout_alignStart="@+id/foodimg"
+        android:gravity="center">
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:text="Back"
+            android:background="@drawable/btncategory"
+            android:fontFamily="@font/karla"/>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="7sp"
+            android:text="price"
+            android:background="@drawable/btncategory"
+            android:fontFamily="@font/karla"/>
+    </LinearLayout>
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FoodApp</string>
+    <string name="email" />
+    <string name="required">*required</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="exfood">Apple</string>
+</resources>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:layout_margin="10dp"
+    android:layout_centerInParent="true">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/AppLogo"
+            android:layout_width="271dp"
+            android:layout_height="311dp"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/app_name"
+            app:srcCompat="@drawable/eatsy_logo" />
+
+        <Spinner
+            android:id="@+id/dropdown_table"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/AppLogo"
+            android:layout_centerHorizontal="true"
+            android:dropDownWidth="match_parent"
+            android:paddingVertical="15dp"
+            android:spinnerMode="dropdown" />
+
+        <TextView
+            android:id="@+id/dropdown_required"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dropdown_table"
+            android:layout_alignStart="@id/dropdown_table"
+            android:text="@string/required"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"/>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:id="@+id/namecontainer"
+            app:helperText="@string/required"
+            app:helperTextTextColor="@android:color/darker_gray"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dropdown_required"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="50dp"
+            android:paddingTop="10dp"
+            android:textSize="12sp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtname"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:layout_alignStart="@+id/namecontainer"
+                android:hint="@string/name"
+                android:inputType="text"
+                android:lines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button
+            android:id="@+id/btnOrder"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="Start Order"
+            android:layout_below="@+id/namecontainer"
+            android:fontFamily="@font/karla" />
+
+        <TextView
+            android:id="@+id/textAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnOrder"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Admin? Login"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Login"
+            android:layout_below="@+id/textAdmin"
+            android:fontFamily="@font/karla"
+            />
+    </RelativeLayout>
+</RelativeLayout>
